@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 UpdateBy: getValue
             }
 
-             await axios.patch('http://localhost:3333/atualizar-maquina', body ).then(response => {
+             await axios.patch('https://backendmaquinas.onrender.com/atualizar-maquina', body ).then(response => {
                 if (response.status === 200) {
                     alert('Máquina atualizada com sucesso');
                     renderMachineList(machines);
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     async function loadMachineList() {
         try {
-            const response = await axios.get('http://localhost:3333/listar-maquinas');
+            const response = await axios.get('https://backendmaquinas.onrender.com/listar-maquinas');
 
             if (response.status === 200) {
                 machines = response.data;
